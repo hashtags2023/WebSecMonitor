@@ -11,6 +11,12 @@
 
 ## 📸 Demo
 
+![Scanner running](screenshots/scan_banner.png)
+
+![Full scan output](screenshots/scan_output.png)
+
+![Scan summary](screenshots/scan_summary.png)
+
 ```
  ___       ___  ________  ________  ________  _______   ________
 |\  \     |\  \|\   __  \|\   ____\|\   __  \|\  ___ \ |\   ____\
