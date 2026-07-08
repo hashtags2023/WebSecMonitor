@@ -11,11 +11,13 @@
 
 ## 📸 Demo
 
-![Scanner running](screenshots/scan_banner.png)
+![WebSecMonitor Banner](scan_banner.png)
 
-![Full scan output](screenshots/scan_output.png)
+![Scan Findings](scan_findings_report.png)
 
-![Scan summary](screenshots/scan_summary.png)
+![Scan Summary](scan_summary.png)
+
+![HTML Scan Report](scan_report.png)
 
 ```
  ___       ___  ________  ________  ________  _______   ________
