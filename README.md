@@ -11,17 +11,17 @@
 
 ## 📸 Demo
 
-![WebSecMonitor Banner](scan_banner.png)
+![WebSecMonitor Banner](docs/images/scan_banner.png)
 
-![Scan Findings](scan_findings_report.png)
+![Scan Findings](docs/images/scan_findings_report.png)
 
-![Scan Summary](scan_summary.png)
+![Scan Summary](docs/images/scan_summary.png)
 
-![HTML Scan Report](scan_report.png)
+![HTML Scan Report](docs/images/scan_report.png)
 
-![HTML Scan Report](scan_report2.png)
+![HTML Scan Report](docs/images/scan_report2.png)
 
-![HTML Scan Report](scan_report3.png)
+![HTML Scan Report](docs/images/scan_report3.png)
 
 ```
  ___       ___  ________  ________  ________  _______   ________
