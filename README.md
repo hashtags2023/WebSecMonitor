@@ -57,19 +57,20 @@
 
 ## 🛡️ What It Scans For
 
-| Module | Vulnerabilities Detected |
-|--------|--------------------------|
+| Module             | Vulnerabilities Detected                                                                          |
+| ------------------ | ------------------------------------------------------------------------------------------------- |
 | **Header Checker** | Missing HSTS, CSP, X-Frame-Options, X-Content-Type-Options, Referrer-Policy; Info-leaking headers |
-| **SQL Injection** | Error-based SQLi via common payloads in URL parameters |
-| **XSS Scanner** | Reflected XSS via unescaped parameter reflection |
-| **Open Redirect** | Unvalidated redirects via common redirect parameters |
-| **Directory Enum** | Exposed admin panels, `.env` files, `.git` repos, backups, config files, logs |
+| **SQL Injection**  | Error-based SQLi via common payloads in URL parameters                                            |
+| **XSS Scanner**    | Reflected XSS via unescaped parameter reflection                                                  |
+| **Open Redirect**  | Unvalidated redirects via common redirect parameters                                              |
+| **Directory Enum** | Exposed admin panels, `.env` files, `.git` repos, backups, config files, logs                     |
 
 ---
 
 ## 🚀 Getting Started
 
 ### Prerequisites
+
 - Python 3.10+
 - pip
 
@@ -107,8 +108,9 @@ python -m scanner.main http://target.com -o report.json
 WebSecMonitor generates both **HTML** and **JSON** reports.
 
 **HTML Report** — Dark-themed, color-coded by severity with remediation guidance:
+
 - 🔴 Critical
-- 🟠 High  
+- 🟠 High
 - 🟡 Medium
 - 🔵 Info
 
@@ -154,6 +156,7 @@ WebSecMonitor/
 > Unauthorized scanning is illegal and unethical.
 
 For safe practice, test against intentionally vulnerable systems:
+
 - [http://testphp.vulnweb.com](http://testphp.vulnweb.com) (Acunetix test site)
 - [DVWA](https://github.com/digininja/DVWA)
 - [OWASP WebGoat](https://github.com/WebGoat/WebGoat)
@@ -178,10 +181,6 @@ For safe practice, test against intentionally vulnerable systems:
 - [ ] Baseline comparison to reduce path-enumeration false positives
 - [ ] CORS misconfiguration detection
 - [ ] SSL/TLS certificate analysis
-- [ ] Subdomain enumeration
-- [ ] Rate limiting & brute-force detection
-- [ ] CVE lookup integration
-- [ ] Slack/email alerting for CI/CD pipelines
 
 ---
 
@@ -189,7 +188,7 @@ For safe practice, test against intentionally vulnerable systems:
 
 **Lori (hashtags2023)**  
 B.S. Computer Science — CSU Sacramento  
-Cybersecurity & AI Enthusiast  
+Cybersecurity & AI Enthusiast
 
 [![LinkedIn](https://img.shields.io/badge/-LinkedIn-0077B5?style=flat&logo=linkedin&logoColor=white)](https://linkedin.com/in/lori-cs-security)
 [![GitHub](https://img.shields.io/badge/-GitHub-181717?style=flat&logo=github&logoColor=white)](https://github.com/hashtags2023)

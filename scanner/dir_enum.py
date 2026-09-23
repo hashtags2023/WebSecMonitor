@@ -6,6 +6,18 @@ Checks for commonly exposed paths, admin panels, config files, and backups.
 import requests
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
+import uuid
+
+def get_baseline(base_url: str):
+    """Fetch a random nonexistent path to learn how the site answers 'not found'."""
+    try:
+        r = requests.get(f"{base_url}/{uuid.uuid4().hex}", timeout=6,
+                         headers={"User-Agent": "WebSecMonitor/1.0"},
+                         allow_redirects=False)
+        return r.status_code, len(r.content)
+    except Exception:
+        return None
+
 COMMON_PATHS = {
     # Admin panels
     "/admin": ("HIGH", "Admin panel exposed"),
@@ -61,31 +73,37 @@ COMMON_PATHS = {
 }
 
 
-def check_path(base_url: str, path: str, meta: tuple) -> dict | None:
+def check_path(base_url, path, meta, baseline=None):
     severity, description = meta
     url = base_url.rstrip("/") + path
     try:
-        response = requests.get(
-            url, timeout=6,
-            headers={"User-Agent": "WebSecMonitor/1.0"},
-            allow_redirects=False
-        )
-        if response.status_code in (200, 301, 302, 403):
-            return {
-                "path": path,
-                "status_code": response.status_code,
-                "severity": severity,
-                "description": description,
-                "url": url
-            }
+        response = requests.get(url, timeout=6,
+                                headers={"User-Agent": "WebSecMonitor/1.0"},
+                                allow_redirects=False)
+        status = response.status_code
+        if status not in (200, 301, 302, 403):
+            return None
+
+        # Skip responses that look like the site's generic "not found" answer
+        if baseline and status == baseline[0] and abs(len(response.content) - baseline[1]) < 50:
+            return None
+
+        # A 403 means the path exists but is blocked, not exposed
+        if status == 403:
+            severity = "INFO"
+            description = f"Exists but access forbidden: {description}"
+
+        return {"path": path, "status_code": status, "severity": severity,
+                "description": description, "url": url}
     except Exception:
-        pass
-    return None
+        return None
 
 
 def check_common_paths(target: str, verbose: bool = False) -> list:
     findings = []
     base_url = target.rstrip("/")
+    baseline = get_baseline(base_url)
+
     total = len(COMMON_PATHS)
 
     if verbose:
@@ -93,7 +111,7 @@ def check_common_paths(target: str, verbose: bool = False) -> list:
 
     with ThreadPoolExecutor(max_workers=10) as executor:
         futures = {
-            executor.submit(check_path, base_url, path, meta): path
+            executor.submit(check_path, base_url, path, meta, baseline): path
             for path, meta in COMMON_PATHS.items()
         }
 
