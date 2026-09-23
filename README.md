@@ -2,7 +2,7 @@
 
 > A Python-based web vulnerability scanner that identifies common security misconfigurations and attack vectors in web applications.
 
-![Python](https://img.shields.io/badge/Python-3.8+-3776AB?style=flat&logo=python&logoColor=white)
+![Python](https://img.shields.io/badge/Python-3.10+-3776AB?style=flat&logo=python&logoColor=white)
 ![License](https://img.shields.io/badge/License-MIT-green?style=flat)
 ![Status](https://img.shields.io/badge/Status-Active-brightgreen?style=flat)
 ![Security](https://img.shields.io/badge/Category-Cybersecurity-red?style=flat)
@@ -70,7 +70,7 @@
 ## 🚀 Getting Started
 
 ### Prerequisites
-- Python 3.8+
+- Python 3.10+
 - pip
 
 ### Installation
@@ -160,12 +160,25 @@ For safe practice, test against intentionally vulnerable systems:
 
 ---
 
+## ⚠️ Known Limitations
+
+- **URL parameters only:** injection tests target GET query parameters; form/POST bodies are not tested yet
+- **Error-based SQLi only:** blind and time-based injection are not detected
+- **Reflected XSS only:** stored and DOM-based XSS are not detected
+- **Path enumeration false positives:** sites that return 200 for every URL (e.g., single-page apps) may produce noisy results
+- **Detection, not exploitation:** findings are indicators that need manual verification
+
+---
+
 ## 🗺️ Roadmap
 
 - [ ] Form-based POST parameter injection testing
-- [ ] Subdomain enumeration
+- [ ] Blind / time-based SQL injection detection
+- [ ] Stored and DOM-based XSS detection
+- [ ] Baseline comparison to reduce path-enumeration false positives
 - [ ] CORS misconfiguration detection
 - [ ] SSL/TLS certificate analysis
+- [ ] Subdomain enumeration
 - [ ] Rate limiting & brute-force detection
 - [ ] CVE lookup integration
 - [ ] Slack/email alerting for CI/CD pipelines
@@ -178,7 +191,7 @@ For safe practice, test against intentionally vulnerable systems:
 B.S. Computer Science — CSU Sacramento  
 Cybersecurity & AI Enthusiast  
 
-[![LinkedIn](https://img.shields.io/badge/-LinkedIn-0077B5?style=flat&logo=linkedin&logoColor=white)](https://linkedin.com/in/yourlinkedin)
+[![LinkedIn](https://img.shields.io/badge/-LinkedIn-0077B5?style=flat&logo=linkedin&logoColor=white)](https://linkedin.com/in/lori-cs-security)
 [![GitHub](https://img.shields.io/badge/-GitHub-181717?style=flat&logo=github&logoColor=white)](https://github.com/hashtags2023)
 
 ---
