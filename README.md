@@ -181,6 +181,10 @@ For safe practice, test against intentionally vulnerable systems:
 - [ ] Baseline comparison to reduce path-enumeration false positives
 - [ ] CORS misconfiguration detection
 - [ ] SSL/TLS certificate analysis
+- [ ] Subdomain enumeration
+- [ ] Rate limiting & brute-force detection
+- [ ] CVE lookup integration
+- [ ] Slack/email alerting for CI/CD pipelines
 
 ---
 
@@ -192,6 +196,13 @@ Cybersecurity & AI Enthusiast
 
 [![LinkedIn](https://img.shields.io/badge/-LinkedIn-0077B5?style=flat&logo=linkedin&logoColor=white)](https://linkedin.com/in/lori-cs-security)
 [![GitHub](https://img.shields.io/badge/-GitHub-181717?style=flat&logo=github&logoColor=white)](https://github.com/hashtags2023)
+
+---
+
+### Certifications
+
+![Security+](https://img.shields.io/badge/-CompTIA%20Security%2B-EA2124?style=flat&logo=comptia&logoColor=white)
+![AWS](https://img.shields.io/badge/-AWS%20Cloud%20Practitioner-232F3E?style=flat&logo=amazonaws&logoColor=white)
 
 ---
 
