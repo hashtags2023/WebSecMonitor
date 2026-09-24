@@ -57,19 +57,20 @@
 
 ## 🛡️ What It Scans For
 
-| Module | Vulnerabilities Detected |
-|--------|--------------------------|
+| Module             | Vulnerabilities Detected                                                                          |
+| ------------------ | ------------------------------------------------------------------------------------------------- |
 | **Header Checker** | Missing HSTS, CSP, X-Frame-Options, X-Content-Type-Options, Referrer-Policy; Info-leaking headers |
-| **SQL Injection** | Error-based SQLi via common payloads in URL parameters |
-| **XSS Scanner** | Reflected XSS via unescaped parameter reflection |
-| **Open Redirect** | Unvalidated redirects via common redirect parameters |
-| **Directory Enum** | Exposed admin panels, `.env` files, `.git` repos, backups, config files, logs |
+| **SQL Injection**  | Error-based SQLi via common payloads in URL parameters                                            |
+| **XSS Scanner**    | Reflected XSS via unescaped parameter reflection                                                  |
+| **Open Redirect**  | Unvalidated redirects via common redirect parameters                                              |
+| **Directory Enum** | Exposed admin panels, `.env` files, `.git` repos, backups, config files, logs                     |
 
 ---
 
 ## 🚀 Getting Started
 
 ### Prerequisites
+
 - Python 3.10+
 - pip
 
@@ -107,8 +108,9 @@ python -m scanner.main http://target.com -o report.json
 WebSecMonitor generates both **HTML** and **JSON** reports.
 
 **HTML Report** — Dark-themed, color-coded by severity with remediation guidance:
+
 - 🔴 Critical
-- 🟠 High  
+- 🟠 High
 - 🟡 Medium
 - 🔵 Info
 
@@ -154,6 +156,7 @@ WebSecMonitor/
 > Unauthorized scanning is illegal and unethical.
 
 For safe practice, test against intentionally vulnerable systems:
+
 - [http://testphp.vulnweb.com](http://testphp.vulnweb.com) (Acunetix test site)
 - [DVWA](https://github.com/digininja/DVWA)
 - [OWASP WebGoat](https://github.com/WebGoat/WebGoat)
@@ -189,10 +192,17 @@ For safe practice, test against intentionally vulnerable systems:
 
 **Lori (hashtags2023)**  
 B.S. Computer Science — CSU Sacramento  
-Cybersecurity & AI Enthusiast  
+Cybersecurity & AI Enthusiast
 
 [![LinkedIn](https://img.shields.io/badge/-LinkedIn-0077B5?style=flat&logo=linkedin&logoColor=white)](https://linkedin.com/in/lori-cs-security)
 [![GitHub](https://img.shields.io/badge/-GitHub-181717?style=flat&logo=github&logoColor=white)](https://github.com/hashtags2023)
+
+---
+
+### Certifications
+
+![Security+](https://img.shields.io/badge/-CompTIA%20Security%2B-EA2124?style=flat&logo=comptia&logoColor=white)
+![AWS](https://img.shields.io/badge/-AWS%20Cloud%20Practitioner-232F3E?style=flat&logo=amazonaws&logoColor=white)
 
 ---
 
