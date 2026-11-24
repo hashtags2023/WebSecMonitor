@@ -18,6 +18,17 @@ from utils.report import generate_report
 from utils.banner import print_banner
 
 
+def confirm_authorization(target: str) -> bool:
+    """Require explicit confirmation that the user is allowed to scan the target."""
+    print(f"\n[!] You are about to actively scan: {target}")
+    print("[!] Only scan systems you own or have explicit written permission to test.")
+    if not sys.stdin.isatty():
+        print("[!] Non-interactive session: re-run with --yes to confirm authorization.")
+        return False
+    answer = input("[?] Do you have authorization to scan this target? (yes/no): ")
+    return answer.strip().lower() in ("yes", "y")
+
+
 def run_scan(target: str, output: str = None, verbose: bool = False):
     print_banner()
     print(f"\n[*] Target       : {target}")
@@ -86,10 +97,16 @@ def main():
     parser.add_argument("-o", "--output", help="Save report to file (e.g. report.json)", default=None)
     parser.add_argument("-v", "--verbose", help="Enable verbose output", action="store_true")
 
+    parser.add_argument("-y", "--yes", help="Confirm you are authorized to scan the target (skips the prompt)", action="store_true")
+
     args = parser.parse_args()
 
     if not args.target.startswith("http"):
         print("[!] Error: Target must start with http:// or https://")
+        sys.exit(1)
+
+    if not args.yes and not confirm_authorization(args.target):
+        print("[!] Scan cancelled: authorization not confirmed.")
         sys.exit(1)
 
     run_scan(args.target, args.output, args.verbose)

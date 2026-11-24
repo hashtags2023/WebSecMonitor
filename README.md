@@ -35,7 +35,7 @@
   WebSecMonitor v1.0  |  Web Vulnerability Scanner  |  by hashtags2023
 
 [*] Target       : http://testphp.vulnweb.com
-[*] Scan started : 2025-01-15 14:32:08
+[*] Scan started : 2026-05-15 14:32:08
 [*] Mode         : Standard
 
 [+] Checking Security Headers...
@@ -93,6 +93,9 @@ python -m scanner.main http://target.com
 
 # Verbose mode
 python -m scanner.main http://target.com -v
+
+# Skip the authorization prompt (CI / scripts) -- only for targets you're allowed to test
+python -m scanner.main http://target.com --yes
 
 # Save HTML report
 python -m scanner.main http://target.com -o report.html
